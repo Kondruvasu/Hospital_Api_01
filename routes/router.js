@@ -6,17 +6,17 @@ const { registerDoctor, registerPatient, createReport, all_reports, ALLReports, 
 
 const router = express.Router();
 
-router.post('/doctors/register',registerDoctor); //To register Doctor
+router.post('/doctors/register',registerDoctor); //Register a new doctor with username and password
 
-router.post('/login', login);                    //to login doctor
+router.post('/login', login);                    // Log in to get a JWT for authentication.
 
-router.post('/patients/register', registerPatient);//To register patient
+router.post('/patients/register', registerPatient);// Register a new patient.
 
-router.post('/patients/:id/create_report', createReport); //To create_report of patient
+router.post('/patients/:id/create_report', createReport); // Create a new report for a specific patient
 
-router.get('/patients/:id/all_report',all_reports); //To check patients all_report 
+router.get('/patients/:id/all_report',all_reports); //List all reports of a patient (oldest to latest 
 
-router.get('/reports/:status', ALLReports); //To check patient report status
+router.get('/reports/:status', ALLReports); //List all reports of all patients filtered by a specific status
 
 
 
